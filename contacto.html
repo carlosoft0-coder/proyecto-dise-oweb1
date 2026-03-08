@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vital Dent | Contacto</title>
+  <meta name="description" content="Sitio web odontológico profesional con diseño moderno, animaciones, menú desplegable y secciones informativas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- Barra superior con dirección, correo y teléfono -->
+<header class="topbar">
+  <div class="container">
+    <div class="topbar-item">📍 2do anillo, Santa Cruz · Atención con cita previa</div>
+    <div class="topbar-item">✉️ contacto@clinicadentalscz.com</div>
+    <div class="topbar-item">📞 +591 7788 4432</div>
+  </div>
+</header>
+
+<!-- Menú principal con dropdown de especialidades -->
+<nav class="navbar">
+  <div class="container">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">VD</span>
+      <span>Vital Dent <small>Odontología estética y especializada</small></span>
+    </a>
+    <ul class="nav-links" data-nav>
+      <li><a href="index.html" class="">Inicio</a></li>
+      <li><a href="acerca.html" class="">Acerca de nosotros</a></li>
+      <li class="dropdown">
+        <a href="especialidades.html" class="drop-toggle " data-dropdown-toggle>Especialidades ▾</a>
+        <div class="dropdown-menu">
+          <a href="especialidades.html#estetica">Estética dental</a>
+          <a href="especialidades.html#ortodoncia">Ortodoncia</a>
+          <a href="especialidades.html#implantologia">Implantología</a>
+          <a href="especialidades.html#odontopediatria">Odontopediatría</a>
+        </div>
+      </li>
+      <li><a href="equipo.html" class="">Equipo</a></li>
+      <li><a href="galeria.html" class="">Galería</a></li>
+      <li><a href="contacto.html" class="active">Contacto</a></li>
+      <li><a href="externa.html" class="">Página externa</a></li>
+    </ul>
+    <a class="btn btn-primary nav-cta" href="contacto.html">Reservar cita</a>
+    <button class="menu-btn" data-menu-toggle aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Encabezado interno de la página -->
+<section class="page-hero">
+  <div class="container reveal">
+    <div class="breadcrumbs"><span>Inicio</span><span>•</span><span>Contacto</span></div>
+    <h1>Contacto</h1>
+    <p>Formulario de contacto, datos rápidos y mapa de Google listo para ubicar la clínica.</p>
+  </div>
+</section>
+<!-- Sección principal de contenido -->
+<section class="section">
+  <div class="container contact-grid">
+    <!-- Columna izquierda: formulario / Columna derecha: mapa -->
+    <div class="contact-card reveal">
+      <h2>Hablemos de tu próxima cita</h2>
+      <p>Completa el formulario y luego puedes conectarlo a correo, WhatsApp o backend cuando lo implementes.</p>
+      <form class="form-grid">
+        <!-- Formulario base: luego puedes conectarlo a backend o WhatsApp -->
+        <input class="input" type="text" placeholder="Nombre completo">
+        <input class="input" type="tel" placeholder="Celular o WhatsApp">
+        <input class="input full" type="email" placeholder="Correo electrónico">
+        <input class="input" type="text" placeholder="Tratamiento de interés">
+        <input class="input" type="date">
+        <textarea class="input full" rows="6" placeholder="Cuéntanos qué tratamiento deseas realizarte"></textarea>
+        <button class="btn btn-primary full" type="button">Enviar solicitud</button>
+      </form>
+      <div class="contact-list">
+        <div class="contact-item"><div class="tick">📍</div><div><strong>Dirección</strong><br>2do anillo, Santa Cruz de la Sierra</div></div>
+        <div class="contact-item"><div class="tick">📞</div><div><strong>Teléfono</strong><br>+591 7788 4432</div></div>
+        <div class="contact-item"><div class="tick">⏰</div><div><strong>Horarios</strong><br>Lun a Sáb · 8:00 a 20:00</div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <!-- Cambia estas coordenadas para mover el pin: latitud,longitud -->
+      <iframe class="map-embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-17.783327,-63.182140&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+
+<!-- Pie de página con enlaces rápidos y contacto -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="logo" href="index.html" style="color:white;">
+        <span class="logo-mark">VD</span>
+        <span>Vital Dent <small style="color:#ffd3d3;">Sonrisas con tecnología moderna</small></span>
+      </a>
+      <p>Clínica odontológica con presencia profesional, atención cercana y una imagen clara para transmitir confianza desde el primer vistazo.</p>
+    </div>
+    <div>
+      <h4>Menú</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="acerca.html">Acerca de nosotros</a></li>
+        <li><a href="especialidades.html">Especialidades</a></li>
+        <li><a href="equipo.html">Equipo</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="especialidades.html#estetica">Diseño de sonrisa</a></li>
+        <li><a href="especialidades.html#ortodoncia">Ortodoncia</a></li>
+        <li><a href="especialidades.html#implantologia">Implantes</a></li>
+        <li><a href="especialidades.html#odontopediatria">Odontopediatría</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="tel:+59177884432">+591 7788 4432</a></li>
+        <li><a href="mailto:contacto@clinicadentalscz.com">contacto@clinicadentalscz.com</a></li>
+        <li>Santa Cruz de la Sierra</li>
+        <li><a href="externa.html">Promociones y contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-note">
+    <span>© <span data-year></span> Vital Dent. Todos los derechos reservados.</span>
+    <span>Sitio web dental completo · responsive · animado</span>
+  </div>
+</footer>
+
+<!-- Script de menú móvil, dropdown y animaciones al hacer scroll -->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

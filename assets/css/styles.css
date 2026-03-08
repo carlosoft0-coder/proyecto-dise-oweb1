@@ -1,0 +1,669 @@
+/* Variables globales de color, sombras y medidas */
+:root {
+  --primary: #c62828; /* color principal rojo */
+  --primary-dark: #8e1d1d; /* rojo más intenso para contraste */
+  --secondary: #fff7f7; /* tono suave de apoyo */
+  --accent: #f6c7c7; /* tono decorativo para detalles */
+  --gold: #f0c27a; /* acento cálido para balance visual */
+  --text: #1f2937; /* color base del texto */
+  --muted: #6b7280; /* texto secundario */
+  --white: #ffffff; /* blanco reutilizable */
+  --shadow: 0 20px 60px rgba(131, 36, 36, 0.12); /* sombra principal de tarjetas */
+  --radius: 24px; /* radio grande de bordes */
+  --radius-sm: 16px; /* radio pequeño de bordes */
+  --container: 1180px; /* ancho máximo del contenido */
+  --gradient: linear-gradient(135deg, #8f1d1d 0%, #c62828 48%, #f06767 100%); /* degradado principal del sitio */
+}
+
+/* Hace que padding y borde no agranden el ancho real */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+/* Base global del sitio */
+body {
+  margin: 0; /* elimina margen por defecto */
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; /* define la tipografía general */
+  color: var(--text); /* aplica color base del texto */
+  background:
+    radial-gradient(circle at top right, rgba(240, 194, 122, 0.18), transparent 26%),
+    radial-gradient(circle at top left, rgba(198, 40, 40, 0.10), transparent 30%),
+    #fffdfd;
+  line-height: 1.6; /* mejora la lectura del contenido */
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+.container { width: min(calc(100% - 32px), var(--container)); margin-inline: auto; }
+/* Barra superior con datos rápidos */
+.topbar {
+  background: #7c1717;
+  color: #fff4f4;
+  font-size: 0.92rem; /* controla el tamaño del texto */
+}
+.topbar .container,
+.navbar .container,
+.hero-grid,
+.footer-grid,
+.contact-grid,
+.about-grid,
+.team-grid,
+.gallery-grid,
+.cards-grid,
+.stats-grid,
+.specialties-grid,
+.pricing-grid,
+.external-grid {
+  display: grid; /* activa grid para organizar columnas o filas */
+}
+.topbar .container {
+  grid-template-columns: repeat(3, max-content); /* define cuántas columnas usa el grid */
+  justify-content: space-between; /* separa los bloques hacia los extremos */
+  align-items: center; /* centra elementos verticalmente */
+  gap: 18px; /* separación entre elementos */
+  padding: 10px 0; /* espacio interno */
+}
+.topbar-item {
+  display: inline-flex; /* flex en línea para iconos y textos */
+  align-items: center; /* centra elementos verticalmente */
+  gap: 10px; /* separación entre elementos */
+  opacity: 0.96; /* controla la transparencia */
+}
+.badge {
+  display: inline-flex; /* flex en línea para iconos y textos */
+  align-items: center; /* centra elementos verticalmente */
+  gap: 8px; /* separación entre elementos */
+  padding: 9px 14px; /* espacio interno */
+  border-radius: 999px; /* redondea las esquinas */
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px);
+  font-size: 0.88rem; /* controla el tamaño del texto */
+}
+/* Menú principal fijo arriba */
+.navbar {
+  position: sticky; /* mantiene el elemento pegado al top */
+  top: 0; /* lo pega en la parte superior */
+  z-index: 50; /* pone el menú por encima del resto */
+  background: rgba(255,255,255,0.88); /* fondo semitransparente del menú */
+  backdrop-filter: blur(18px); /* desenfoca el fondo detrás del menú */
+  border-bottom: 1px solid rgba(198, 40, 40, 0.08);
+}
+.navbar .container {
+  grid-template-columns: 220px 1fr auto; /* define cuántas columnas usa el grid */
+  align-items: center; /* centra elementos verticalmente */
+  gap: 20px; /* separación entre elementos */
+  min-height: 80px; /* asegura una altura mínima */
+}
+.logo {
+  display: inline-flex; /* flex en línea para iconos y textos */
+  align-items: center; /* centra elementos verticalmente */
+  gap: 12px; /* separación entre elementos */
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.logo-mark {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px; /* redondea las esquinas */
+  background: linear-gradient(135deg, #ff7373, #f7caca); /* usa el degradado rojo principal */
+  display: grid; /* activa grid para organizar columnas o filas */
+  place-items: center;
+  color: white;
+  font-weight: 900;
+  box-shadow: var(--shadow); /* agrega profundidad visual */
+}
+.logo small { display: block; color: var(--muted); font-weight: 600; letter-spacing: 0; }
+.nav-links {
+  display: flex; /* activa flex para alinear elementos */
+  align-items: center; /* centra elementos verticalmente */
+  justify-content: center; /* centra elementos horizontalmente */
+  gap: 6px; /* separación entre elementos */
+  list-style: none;
+  padding: 0; /* espacio interno */
+  margin: 0; /* elimina margen por defecto */
+}
+.nav-links > li { position: relative; }
+.nav-links > li > a,
+.drop-toggle {
+  display: inline-flex; /* flex en línea para iconos y textos */
+  align-items: center; /* centra elementos verticalmente */
+  gap: 8px; /* separación entre elementos */
+  padding: 14px 16px; /* espacio interno */
+  border-radius: 14px; /* redondea las esquinas */
+  font-weight: 700;
+  color: #472021;
+  transition: transform .25s ease, background .25s ease, color .25s ease; /* suaviza cambios visuales */
+}
+.nav-links > li > a:hover,
+.drop-toggle:hover,
+.nav-links > li > a.active {
+  background: rgba(198,40,40,0.08);
+  color: var(--primary);
+  transform: translateY(-1px); /* mueve o escala elementos */
+}
+.dropdown-menu {
+  position: absolute; /* posiciona el elemento libremente */
+  left: 0;
+  top: calc(100% + 10px);
+  min-width: 250px;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(198,40,40,0.08);
+  border-radius: 18px; /* redondea las esquinas */
+  box-shadow: var(--shadow); /* agrega profundidad visual */
+  padding: 12px; /* espacio interno */
+  display: none;
+}
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu { display: block; }
+.dropdown-menu a {
+  display: block; /* convierte el elemento en bloque */
+  padding: 12px 14px; /* espacio interno */
+  border-radius: 12px; /* redondea las esquinas */
+  color: #4b2525;
+  font-weight: 600;
+}
+.dropdown-menu a:hover { background: rgba(198,40,40,0.08); color: var(--primary); }
+.btn,
+button.btn {
+  display: inline-flex; /* flex en línea para iconos y textos */
+  align-items: center; /* centra elementos verticalmente */
+  justify-content: center; /* centra elementos horizontalmente */
+  gap: 10px; /* separación entre elementos */
+  border: 0; /* quita el borde por defecto */
+  cursor: pointer; /* muestra mano al pasar sobre el botón */
+  border-radius: 999px; /* redondea las esquinas */
+  padding: 14px 22px; /* espacio interno */
+  font-weight: 800;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease; /* suaviza cambios visuales */
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary {
+  background: var(--gradient); /* usa el degradado rojo principal */
+  color: white;
+  box-shadow: 0 18px 40px rgba(198,40,40,0.24); /* agrega profundidad visual */
+}
+.btn-outline {
+  background: white;
+  color: var(--primary);
+  border: 1px solid rgba(198,40,40,0.16);
+}
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 0; /* quita el borde por defecto */
+  width: 46px;
+  height: 46px;
+  border-radius: 14px; /* redondea las esquinas */
+}
+.menu-btn span {
+  display: block; /* convierte el elemento en bloque */
+  width: 24px;
+  height: 2px;
+  background: #641717;
+  margin: 5px auto;
+  transition: .25s ease; /* suaviza cambios visuales */
+}
+/* Portada de inicio */
+.hero {
+  position: relative; /* crea referencia para elementos absolutos */
+  overflow: hidden; /* oculta lo que sobresale */
+  padding: 58px 0 80px; /* espacio interno */
+}
+.hero::before {
+  content: "";
+  position: absolute; /* posiciona el elemento libremente */
+  inset: auto -10% -20% auto;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(198,40,40,0.16), transparent 70%);
+  pointer-events: none;
+}
+.hero-grid {
+  grid-template-columns: 1.08fr .92fr; /* define cuántas columnas usa el grid */
+  gap: 36px; /* separación entre elementos */
+  align-items: center; /* centra elementos verticalmente */
+}
+.hero-copy h1,
+.page-hero h1 {
+  font-size: clamp(2.3rem, 5vw, 4.7rem); /* controla el tamaño del texto */
+  line-height: 1.05;
+  margin: 16px 0 18px;
+  letter-spacing: -0.05em;
+}
+.eyebrow {
+  color: var(--primary);
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.hero-copy p,
+.page-hero p {
+  color: var(--muted);
+  font-size: 1.08rem; /* controla el tamaño del texto */
+  max-width: 62ch;
+}
+.hero-actions {
+  display: flex; /* activa flex para alinear elementos */
+  flex-wrap: wrap;
+  gap: 14px; /* separación entre elementos */
+  margin: 28px 0 34px;
+}
+.mini-reviews {
+  display: flex; /* activa flex para alinear elementos */
+  flex-wrap: wrap;
+  gap: 14px; /* separación entre elementos */
+}
+.mini-card {
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(198,40,40,0.08);
+  box-shadow: var(--shadow); /* agrega profundidad visual */
+  padding: 16px 18px; /* espacio interno */
+  border-radius: 18px; /* redondea las esquinas */
+  min-width: 180px;
+}
+.mini-card strong { font-size: 1.2rem; display: block; }
+.hero-visual {
+  position: relative; /* crea referencia para elementos absolutos */
+  min-height: 590px; /* asegura una altura mínima */
+}
+.visual-card,
+.floating-card,
+.info-panel,
+.card,
+.contact-card,
+.team-card,
+.gallery-card,
+.price-card,
+.external-card {
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(198,40,40,0.08);
+  box-shadow: var(--shadow); /* agrega profundidad visual */
+  border-radius: var(--radius); /* redondea las esquinas */
+}
+/* Tarjeta grande de la imagen principal */
+.visual-card {
+  position: absolute; /* posiciona el elemento libremente */
+  inset: 44px 0 0 52px;
+  overflow: hidden; /* oculta lo que sobresale */
+}
+/* Fondo de la imagen principal */
+.mock-photo {
+  width: 100%; /* ocupa todo el ancho disponible */
+  height: 100%; /* ocupa toda la altura disponible */
+  min-height: 520px; /* asegura una altura mínima */
+  background:
+   linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0)),
+   radial-gradient(circle at 20% 18%, rgba(255,255,255,.8), transparent 20%),
+   linear-gradient(135deg, #fbd9d9 0%, #fff 45%, #f8b6b6 100%);
+  position: relative; /* crea referencia para elementos absolutos */
+}
+.mock-photo::before,
+.mock-photo::after {
+  content: "";
+  position: absolute; /* posiciona el elemento libremente */
+  border-radius: 50%; /* redondea las esquinas */
+  background: rgba(198, 40, 40, 0.11);
+}
+.mock-photo::before { width: 180px; height: 180px; top: 52px; left: 48px; }
+.mock-photo::after { width: 280px; height: 280px; right: 20px; bottom: 10px; }
+.hero-photo {
+  position: absolute; /* posiciona el elemento libremente */
+  inset: 0;
+  width: 100%; /* ocupa todo el ancho disponible */
+  height: 100%; /* ocupa toda la altura disponible */
+  object-fit: cover; /* recorta la imagen sin deformarla */
+  filter: saturate(1.02) contrast(1.02);
+}
+.about-photo,
+.image-top img {
+  position: absolute; /* posiciona el elemento libremente */
+  inset: 0;
+  width: 100%; /* ocupa todo el ancho disponible */
+  height: 100%; /* ocupa toda la altura disponible */
+  object-fit: cover; /* recorta la imagen sin deformarla */
+}
+.about-photo {
+  opacity: 0.96; /* controla la transparencia */
+}
+.image-top img {
+  z-index: 1;
+}
+.image-top::before,
+.image-top::after {
+  z-index: 2;
+}
+
+.floating-card {
+  position: absolute; /* posiciona el elemento libremente */
+  padding: 18px; /* espacio interno */
+  animation: float 4.8s ease-in-out infinite;
+}
+.floating-card.top-right { right: 10px; top: 10px; width: 220px; }
+.floating-card.bottom-left { left: 0; bottom: 16px; width: 250px; animation-delay: -2s; }
+.floating-card strong { display: block; margin-bottom: 6px; color: var(--primary); }
+/* Espaciado general entre secciones */
+.section {
+  padding: 82px 0; /* espacio interno */
+}
+.section-head {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 34px;
+}
+.section-head h2 { font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1.08; margin: 10px 0 14px; letter-spacing: -0.04em; }
+.section-head p { color: var(--muted); }
+.cards-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* define cuántas columnas usa el grid */
+  gap: 22px; /* separación entre elementos */
+}
+.card {
+  padding: 24px; /* espacio interno */
+  transition: transform .28s ease, box-shadow .28s ease; /* suaviza cambios visuales */
+}
+.card:hover,
+.team-card:hover,
+.gallery-card:hover,
+.price-card:hover,
+.contact-card:hover,
+.external-card:hover {
+  transform: translateY(-8px); /* mueve o escala elementos */
+  box-shadow: 0 22px 60px rgba(131, 36, 36, 0.17); /* agrega profundidad visual */
+}
+.icon-bubble {
+  width: 56px;
+  height: 56px;
+  display: grid; /* activa grid para organizar columnas o filas */
+  place-items: center;
+  border-radius: 18px; /* redondea las esquinas */
+  background: rgba(198,40,40,0.1);
+  color: var(--primary);
+  font-size: 1.4rem; /* controla el tamaño del texto */
+  margin-bottom: 16px;
+}
+.stats {
+  padding-top: 0;
+}
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centra horizontalmente */
+  gap: 18px;
+}
+.stat {
+  width: 240px; /* ancho fijo o semi fijo de cada tarjeta */
+  padding: 26px;
+  text-align: center;
+  background: white;
+  border-radius: 22px;
+  border: 1px solid rgba(198,40,40,.08);
+  box-shadow: var(--shadow);
+}
+.stat strong { font-size: clamp(1.8rem, 4vw, 2.7rem); color: var(--primary); display: block; }
+.about-grid {
+  grid-template-columns: .95fr 1.05fr; /* define cuántas columnas usa el grid */
+  gap: 26px; /* separación entre elementos */
+  align-items: center; /* centra elementos verticalmente */
+}
+/* Bloque visual de la sección nosotros */
+.about-visual {
+  position: relative; /* crea referencia para elementos absolutos */
+  min-height: 540px; /* asegura una altura mínima */
+  border-radius: var(--radius); /* redondea las esquinas */
+  overflow: hidden; /* oculta lo que sobresale */
+  background: linear-gradient(135deg, #ffe7e7 0%, #fff 58%, #ffd8d8 100%);
+  box-shadow: var(--shadow); /* agrega profundidad visual */
+}
+.about-shape {
+  position: absolute; /* posiciona el elemento libremente */
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 16%, rgba(198,40,40,.18), transparent 15%),
+    radial-gradient(circle at 80% 28%, rgba(240,194,122,.33), transparent 18%),
+    radial-gradient(circle at 52% 72%, rgba(198,40,40,.10), transparent 17%);
+}
+.info-panel {
+  position: absolute; /* posiciona el elemento libremente */
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  padding: 20px; /* espacio interno */
+}
+.feature-list {
+  display: grid; /* activa grid para organizar columnas o filas */
+  gap: 12px; /* separación entre elementos */
+  margin: 20px 0 28px;
+}
+.feature-item {
+  display: grid; /* activa grid para organizar columnas o filas */
+  grid-template-columns: 42px 1fr; /* define cuántas columnas usa el grid */
+  gap: 12px; /* separación entre elementos */
+  align-items: start;
+}
+.tick {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px; /* redondea las esquinas */
+  display: grid; /* activa grid para organizar columnas o filas */
+  place-items: center;
+  background: rgba(198,40,40,0.1);
+  color: var(--primary);
+  font-weight: 800;
+}
+.team-grid,
+.gallery-grid,
+.specialties-grid,
+.pricing-grid,
+.external-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* define cuántas columnas usa el grid */
+  gap: 22px; /* separación entre elementos */
+}
+.team-card,
+.gallery-card,
+.price-card,
+.contact-card,
+.external-card {
+  overflow: hidden; /* oculta lo que sobresale */
+}
+/* Área superior para las fotos de cards */
+.image-top {
+  height: 240px;
+  background: linear-gradient(135deg, #f6b0b0, #fff0f0 40%, #ffd9d9);
+  position: relative; /* crea referencia para elementos absolutos */
+}
+.image-top::before,
+.image-top::after {
+  content: "";
+  position: absolute; /* posiciona el elemento libremente */
+  border-radius: 50%; /* redondea las esquinas */
+}
+.image-top::before { width: 120px; height: 120px; background: rgba(255,255,255,0.5); left: 20px; top: 20px; }
+.image-top::after { width: 180px; height: 180px; background: rgba(198,40,40,0.12); right: 12px; bottom: -20px; }
+.image-top .emoji {
+  position: absolute; /* posiciona el elemento libremente */
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%); /* mueve o escala elementos */
+  font-size: 5rem; /* controla el tamaño del texto */
+}
+.team-content,
+.gallery-content,
+.price-content,
+.contact-content,
+.external-content { padding: 24px; }
+.tag-row {
+  display: flex; /* activa flex para alinear elementos */
+  flex-wrap: wrap;
+  gap: 8px; /* separación entre elementos */
+  margin-top: 12px;
+}
+.tag {
+  padding: 8px 12px; /* espacio interno */
+  border-radius: 999px; /* redondea las esquinas */
+  background: rgba(198,40,40,0.09);
+  color: var(--primary);
+  font-size: 0.88rem; /* controla el tamaño del texto */
+  font-weight: 700;
+}
+.gallery-card .image-top { height: 280px; }
+.gallery-card:nth-child(2n) .image-top { background: linear-gradient(135deg, #ffd6d6, #fff, #ffefef); }
+.gallery-card:nth-child(3n) .image-top { background: linear-gradient(135deg, #fff3e0, #fff, #ffe0e0); }
+/* Divide formulario y mapa en dos columnas */
+.contact-grid { grid-template-columns: .95fr 1.05fr; gap: 24px; }
+.contact-card { padding: 28px; }
+.contact-list { display: grid; gap: 16px; margin: 24px 0; }
+.contact-item { display: grid; grid-template-columns: 52px 1fr; gap: 14px; align-items: center; }
+.map-embed {
+  border: 0; /* quita el borde por defecto */
+  width: 100%; /* ocupa todo el ancho disponible */
+  min-height: 100%; /* asegura una altura mínima */
+  border-radius: var(--radius); /* redondea las esquinas */
+  box-shadow: var(--shadow); /* agrega profundidad visual */
+}
+.form-grid {
+  display: grid; /* activa grid para organizar columnas o filas */
+  grid-template-columns: 1fr 1fr; /* define cuántas columnas usa el grid */
+  gap: 14px; /* separación entre elementos */
+}
+.form-grid .full { grid-column: 1 / -1; }
+.input {
+  width: 100%; /* ocupa todo el ancho disponible */
+  border: 1px solid rgba(198,40,40,0.14);
+  border-radius: 16px; /* redondea las esquinas */
+  padding: 15px 16px; /* espacio interno */
+  font: inherit;
+  background: white;
+}
+.input:focus {
+  outline: none;
+  border-color: rgba(198,40,40,0.52);
+  box-shadow: 0 0 0 4px rgba(198,40,40,0.1); /* agrega profundidad visual */
+}
+/* Encabezado de páginas internas */
+.page-hero {
+  padding: 70px 0 48px; /* espacio interno */
+  position: relative; /* crea referencia para elementos absolutos */
+  overflow: hidden; /* oculta lo que sobresale */
+}
+.page-hero::after {
+  content: "";
+  position: absolute; /* posiciona el elemento libremente */
+  width: 320px;
+  height: 320px;
+  right: -60px;
+  top: -40px;
+  border-radius: 50%; /* redondea las esquinas */
+  background: radial-gradient(circle, rgba(198,40,40,.14), transparent 70%);
+}
+.breadcrumbs {
+  display: flex; /* activa flex para alinear elementos */
+  gap: 10px; /* separación entre elementos */
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-weight: 600;
+}
+/* Pie de página */
+.footer {
+  padding: 72px 0 24px; /* espacio interno */
+  background: #4f1010;
+  color: #ffeaea;
+  margin-top: 60px;
+}
+.footer-grid {
+  grid-template-columns: 1.2fr .8fr .9fr .9fr; /* define cuántas columnas usa el grid */
+  gap: 24px; /* separación entre elementos */
+}
+.footer h4 { margin: 0 0 14px; font-size: 1.1rem; }
+.footer a { color: #ffeaea; opacity: .9; }
+.footer a:hover { opacity: 1; color: white; }
+.footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.footer-note {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,234,234,0.78);
+  display: flex; /* activa flex para alinear elementos */
+  justify-content: space-between; /* separa los bloques hacia los extremos */
+  gap: 14px; /* separación entre elementos */
+  flex-wrap: wrap;
+}
+/* Estado inicial antes de animar al hacer scroll */
+.reveal {
+  opacity: 0; /* controla la transparencia */
+  transform: translateY(28px); /* mueve o escala elementos */
+  transition: opacity .7s ease, transform .7s ease; /* suaviza cambios visuales */
+}
+.reveal.visible {
+  opacity: 1; /* controla la transparencia */
+  transform: translateY(0); /* mueve o escala elementos */
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+/* Ajustes para tablet y pantallas medianas */
+@media (max-width: 1040px) {
+  .hero-grid,
+  .about-grid,
+  .contact-grid,
+  .footer-grid,
+  .cards-grid,
+  .stats-grid,
+  .team-grid,
+  .gallery-grid,
+  .specialties-grid,
+  .pricing-grid,
+  .external-grid {
+    grid-template-columns: 1fr 1fr; /* define cuántas columnas usa el grid */
+  }
+  .hero-grid,
+  .about-grid,
+  .contact-grid { grid-template-columns: 1fr; }
+  .hero-visual { min-height: 520px; }
+  .visual-card { inset: 34px 20px 0 20px; }
+  .navbar .container {
+    grid-template-columns: 1fr auto auto; /* define cuántas columnas usa el grid */
+  }
+  .nav-links {
+    position: fixed; /* fija el elemento a la ventana */
+    top: 80px;
+    left: 16px;
+    right: 16px;
+    background: rgba(255,255,255,0.98);
+    border: 1px solid rgba(198,40,40,.08);
+    border-radius: 22px; /* redondea las esquinas */
+    box-shadow: var(--shadow); /* agrega profundidad visual */
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px; /* espacio interno */
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links > li > a,
+  .drop-toggle { width: 100%; justify-content: space-between; }
+  .dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none; /* agrega profundidad visual */
+    border: 0; /* quita el borde por defecto */
+    background: rgba(198,40,40,0.04);
+    margin-top: 8px;
+  }
+  .dropdown.open .dropdown-menu { display: block; }
+  .menu-btn { display: inline-block; }
+  .nav-cta { display: none; }
+}
+/* Ajustes para celular */
+@media (max-width: 700px) {
+  .topbar .container { grid-template-columns: 1fr; justify-content: start; }
+  .cards-grid,
+  .stats-grid,
+  .team-grid,
+  .gallery-grid,
+  .specialties-grid,
+  .pricing-grid,
+  .external-grid,
+  .footer-grid,
+  .form-grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 36px; }
+  .hero-copy h1,
+  .page-hero h1 { font-size: clamp(2rem, 10vw, 3rem); }
+  .hero-visual { min-height: 460px; }
+  .floating-card.top-right,
+  .floating-card.bottom-left { width: 200px; }
+}

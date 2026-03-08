@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vital Dent | Especialidades</title>
+  <meta name="description" content="Sitio web odontológico profesional con diseño moderno, animaciones, menú desplegable y secciones informativas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- Barra superior con dirección, correo y teléfono -->
+<header class="topbar">
+  <div class="container">
+    <div class="topbar-item">📍 2do anillo, Santa Cruz · Atención con cita previa</div>
+    <div class="topbar-item">✉️ contacto@clinicadentalscz.com</div>
+    <div class="topbar-item">📞 +591 7788 4432</div>
+  </div>
+</header>
+
+<!-- Menú principal con dropdown de especialidades -->
+<nav class="navbar">
+  <div class="container">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">VD</span>
+      <span>Vital Dent <small>Odontología estética y especializada</small></span>
+    </a>
+    <ul class="nav-links" data-nav>
+      <li><a href="index.html" class="">Inicio</a></li>
+      <li><a href="acerca.html" class="">Acerca de nosotros</a></li>
+      <li class="dropdown">
+        <a href="especialidades.html" class="drop-toggle active" data-dropdown-toggle>Especialidades ▾</a>
+        <div class="dropdown-menu">
+          <a href="especialidades.html#estetica">Estética dental</a>
+          <a href="especialidades.html#ortodoncia">Ortodoncia</a>
+          <a href="especialidades.html#implantologia">Implantología</a>
+          <a href="especialidades.html#odontopediatria">Odontopediatría</a>
+        </div>
+      </li>
+      <li><a href="equipo.html" class="">Equipo</a></li>
+      <li><a href="galeria.html" class="">Galería</a></li>
+      <li><a href="contacto.html" class="">Contacto</a></li>
+      <li><a href="externa.html" class="">Página externa</a></li>
+    </ul>
+    <a class="btn btn-primary nav-cta" href="contacto.html">Reservar cita</a>
+    <button class="menu-btn" data-menu-toggle aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Encabezado interno de la página -->
+<section class="page-hero">
+  <div class="container reveal">
+    <div class="breadcrumbs"><span>Inicio</span><span>•</span><span>Especialidades</span></div>
+    <h1>Especialidades</h1>
+    <p>Servicios listos para mostrar de forma visual, clara y profesional dentro de un menú desplegable y secciones ancla.</p>
+  </div>
+</section>
+<!-- Sección principal de contenido -->
+<section class="section">
+  <div class="container specialties-grid">
+    <!-- Tarjetas de especialidades -->
+    <article class="price-card reveal" id="estetica">
+      <div class="image-top">
+        <!-- Aqui cambias la foto 10: reemplaza el src por tu imagen real -->
+        <img src="assets/img/foto-10.svg" alt="aqui foto 10">
+      </div>
+      <div class="price-content">
+        <h3>Estética dental</h3>
+        <p>Carillas, blanqueamiento, contorneado y diseño de sonrisa con enfoque armónico.</p>
+        <div class="tag-row"><span class="tag">Carillas</span><span class="tag">Blanqueamiento</span></div>
+      </div>
+    </article>
+    <article class="price-card reveal" id="ortodoncia">
+      <div class="image-top">
+        <!-- Aqui cambias la foto 11: reemplaza el src por tu imagen real -->
+        <img src="assets/img/foto-11.svg" alt="aqui foto 11">
+      </div>
+      <div class="price-content">
+        <h3>Ortodoncia</h3>
+        <p>Convencional, estética o de autoligado, con seguimiento visual y profesional.</p>
+        <div class="tag-row"><span class="tag">Brackets</span><span class="tag">Alineación</span></div>
+      </div>
+    </article>
+    <article class="price-card reveal" id="implantologia">
+      <div class="image-top">
+        <!-- Aqui cambias la foto 12: reemplaza el src por tu imagen real -->
+        <img src="assets/img/foto-12.svg" alt="aqui foto 12">
+      </div>
+      <div class="price-content">
+        <h3>Implantología</h3>
+        <p>Rehabilitación funcional y estética con planificación moderna y enfoque integral.</p>
+        <div class="tag-row"><span class="tag">Implantes</span><span class="tag">Coronas</span></div>
+      </div>
+    </article>
+    <article class="price-card reveal" id="odontopediatria">
+      <div class="image-top">
+        <!-- Aqui cambias la foto 13: reemplaza el src por tu imagen real -->
+        <img src="assets/img/foto-13.svg" alt="aqui foto 13">
+      </div>
+      <div class="price-content">
+        <h3>Odontopediatría</h3>
+        <p>Atención amable para niños con prioridad en prevención y adaptación positiva.</p>
+        <div class="tag-row"><span class="tag">Niños</span><span class="tag">Prevención</span></div>
+      </div>
+    </article>
+    <article class="price-card reveal">
+      <div class="image-top">
+        <!-- Aqui cambias la foto 14: reemplaza el src por tu imagen real -->
+        <img src="assets/img/foto-14.svg" alt="aqui foto 14">
+      </div>
+      <div class="price-content">
+        <h3>Endodoncia</h3>
+        <p>Tratamientos de conducto con enfoque conservador, preciso y seguro.</p>
+        <div class="tag-row"><span class="tag">Conductos</span><span class="tag">Precisión</span></div>
+      </div>
+    </article>
+    <article class="price-card reveal">
+      <div class="image-top">
+        <!-- Aqui cambias la foto 15: reemplaza el src por tu imagen real -->
+        <img src="assets/img/foto-15.svg" alt="aqui foto 15">
+      </div>
+      <div class="price-content">
+        <h3>Rehabilitación oral</h3>
+        <p>Coronas, prótesis y soluciones funcionales para recuperar la sonrisa completa.</p>
+        <div class="tag-row"><span class="tag">Coronas</span><span class="tag">Prótesis</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- Pie de página con enlaces rápidos y contacto -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="logo" href="index.html" style="color:white;">
+        <span class="logo-mark">VD</span>
+        <span>Vital Dent <small style="color:#ffd3d3;">Sonrisas con tecnología moderna</small></span>
+      </a>
+      <p>Clínica odontológica con presencia profesional, atención cercana y una imagen clara para transmitir confianza desde el primer vistazo.</p>
+    </div>
+    <div>
+      <h4>Menú</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="acerca.html">Acerca de nosotros</a></li>
+        <li><a href="especialidades.html">Especialidades</a></li>
+        <li><a href="equipo.html">Equipo</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="especialidades.html#estetica">Diseño de sonrisa</a></li>
+        <li><a href="especialidades.html#ortodoncia">Ortodoncia</a></li>
+        <li><a href="especialidades.html#implantologia">Implantes</a></li>
+        <li><a href="especialidades.html#odontopediatria">Odontopediatría</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="tel:+59177884432">+591 7788 4432</a></li>
+        <li><a href="mailto:contacto@clinicadentalscz.com">contacto@clinicadentalscz.com</a></li>
+        <li>Santa Cruz de la Sierra</li>
+        <li><a href="externa.html">Promociones y contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-note">
+    <span>© <span data-year></span> Vital Dent. Todos los derechos reservados.</span>
+    <span>Sitio web dental completo · responsive · animado</span>
+  </div>
+</footer>
+
+<!-- Script de menú móvil, dropdown y animaciones al hacer scroll -->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

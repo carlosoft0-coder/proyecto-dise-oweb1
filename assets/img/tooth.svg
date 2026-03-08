@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 380" fill="none">
+  <defs>
+    <linearGradient id="g" x1="40" y1="20" x2="260" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ffe3e3"/>
+    </linearGradient>
+    <filter id="s" x="0" y="0" width="320" height="380" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#8f1d1d" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <g filter="url(#s)">
+    <path d="M160 24c-55.7 0-106 38.3-106 112 0 53.5 22.1 88.7 41.7 116.3 19.6 27.6 20.8 53.7 29.4 80.8 5 15.9 16.8 23.9 34.9 23.9 18 0 27.9-10.2 32.1-28.4 5.1 18.2 15.2 28.4 33.2 28.4 18.1 0 29.8-8 34.9-23.9 8.6-27.1 9.8-53.2 29.4-80.8C243.9 224.7 266 189.5 266 136 266 62.3 215.7 24 160 24Z" fill="url(#g)"/>
+    <path d="M160 24c-55.7 0-106 38.3-106 112 0 53.5 22.1 88.7 41.7 116.3 19.6 27.6 20.8 53.7 29.4 80.8 5 15.9 16.8 23.9 34.9 23.9 18 0 27.9-10.2 32.1-28.4 5.1 18.2 15.2 28.4 33.2 28.4 18.1 0 29.8-8 34.9-23.9 8.6-27.1 9.8-53.2 29.4-80.8C243.9 224.7 266 189.5 266 136 266 62.3 215.7 24 160 24Z" stroke="#ffffff" stroke-width="10"/>
+    <path d="M111 118c8.6-24 28.1-40 49-40M104 156c1.7 15.7 6.9 30 16 42" stroke="#ffdede" stroke-width="10" stroke-linecap="round"/>
+  </g>
+</svg>
